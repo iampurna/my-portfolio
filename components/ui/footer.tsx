@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { TECH_STACK } from "@/lib/data";
 
 export function Footer() {
@@ -22,22 +22,22 @@ export function Footer() {
       </div>
 
       <div className="px-gutter py-10 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <motion.p
+        <m.p
           className="font-mono text-[13px] text-text-muted"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
           © {new Date().getFullYear()} Purna Lungeli
-        </motion.p>
-        <motion.p
+        </m.p>
+        <m.p
           className="font-mono text-[13px] text-text-muted"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Next.js · TypeScript · Framer Motion
-        </motion.p>
+          Code · Sleep · Code · Repeat
+        </m.p>
       </div>
     </footer>
   );

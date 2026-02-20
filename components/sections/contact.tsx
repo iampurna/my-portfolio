@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PERSONAL } from "@/lib/data";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { MagneticButton } from "@/components/motion/magnetic-button";
@@ -9,7 +9,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-section px-gutter relative">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/[0.02] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-accent/2 to-transparent pointer-events-none" />
 
       <div className="relative z-10">
         <ScrollReveal>
@@ -31,21 +31,21 @@ export function Contact() {
             </p>
 
             {/* Large email CTA */}
-            <motion.a
+            <m.a
               href={`mailto:${PERSONAL.email}`}
               className="inline-block font-display text-[clamp(24px,3.5vw,44px)] font-bold text-text-primary hover:text-accent transition-colors duration-300 mb-12 group"
               whileHover={{ x: 10 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
             >
               {PERSONAL.email}
-              <motion.span
+              <m.span
                 className="inline-block ml-3 opacity-0 group-hover:opacity-100 transition-opacity"
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
                 →
-              </motion.span>
-            </motion.a>
+              </m.span>
+            </m.a>
 
             {/* Social links */}
             <div className="flex flex-wrap gap-4">
@@ -54,7 +54,7 @@ export function Contact() {
                 href={PERSONAL.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border-subtle bg-bg-card text-text-primary font-mono text-[14px] hover:border-accent/30 hover:bg-accent/[0.04] transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border-subtle bg-bg-card text-text-primary font-mono text-[14px] hover:border-accent/30 hover:bg-accent/4 transition-all duration-300"
               >
                 <svg
                   width="20"
@@ -76,7 +76,7 @@ export function Contact() {
                 href={PERSONAL.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border-subtle bg-bg-card text-text-primary font-mono text-[14px] hover:border-accent/30 hover:bg-accent/[0.04] transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border-subtle bg-bg-card text-text-primary font-mono text-[14px] hover:border-accent/30 hover:bg-accent/4 transition-all duration-300"
               >
                 <svg
                   width="20"
@@ -98,7 +98,7 @@ export function Contact() {
               <MagneticButton
                 as="a"
                 href={`mailto:${PERSONAL.email}`}
-                className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border-subtle bg-bg-card text-text-primary font-mono text-[14px] hover:border-accent/30 hover:bg-accent/[0.04] transition-all duration-300"
+                className="flex items-center gap-3 px-6 py-4 rounded-xl border border-border-subtle bg-bg-card text-text-primary font-mono text-[14px] hover:border-accent/30 hover:bg-accent/4 transition-all duration-300"
               >
                 <svg
                   width="20"

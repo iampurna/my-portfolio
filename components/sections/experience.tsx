@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import { EXPERIENCE } from "@/lib/data";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
@@ -25,7 +25,7 @@ function TimelineItem({
   const dotOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className="relative pl-12 pb-16 last:pb-0"
       initial={{ opacity: 0, x: -30 }}
@@ -39,23 +39,23 @@ function TimelineItem({
     >
       {/* Timeline line — animated with scroll */}
       {!isLast && (
-        <div className="absolute left-[7px] top-[20px] bottom-0 w-[1px] bg-accent/5">
-          <motion.div
-            className="w-full bg-gradient-to-b from-accent/40 to-accent/5"
+        <div className="absolute left-1.75 top-5 bottom-0 w-px bg-accent/5">
+          <m.div
+            className="w-full bg-linear-to-b from-accent/40 to-accent/5"
             style={{ height: lineHeight }}
           />
         </div>
       )}
 
       {/* Dot — animated with scroll */}
-      <motion.div
-        className="absolute left-0 top-[8px] w-[15px] h-[15px] rounded-full border-2 border-accent bg-bg-primary"
+      <m.div
+        className="absolute left-0 top-2 w-3.75 h-3.75 rounded-full border-2 border-accent bg-bg-primary"
         style={{ scale: dotScale, opacity: dotOpacity }}
       />
 
       {/* Inner glow on dot */}
-      <motion.div
-        className="absolute left-[3px] top-[11px] w-[9px] h-[9px] rounded-full bg-accent/20"
+      <m.div
+        className="absolute left-0.75 top-2.75 w-2.25 h-2.25 rounded-full bg-accent/20"
         animate={{
           boxShadow: [
             "0 0 0px rgba(212,175,55,0)",
@@ -78,7 +78,7 @@ function TimelineItem({
       {/* Achievements */}
       <div className="space-y-3">
         {item.achievements.map((achievement, j) => (
-          <motion.p
+          <m.p
             key={j}
             className="text-[15px] text-text-secondary font-light leading-[1.7] pl-4 border-l border-border-subtle"
             initial={{ opacity: 0, y: 15 }}
@@ -91,10 +91,10 @@ function TimelineItem({
             }}
           >
             {achievement}
-          </motion.p>
+          </m.p>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 }
 

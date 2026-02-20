@@ -6,30 +6,33 @@ import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Purna Lungeli | .NET Backend Engineer",
+  title: "Purna Lungeli | Full Stack Engineer",
   description:
-    "Building robust, scalable systems with clean architecture and quiet confidence. Portfolio of Purna Lungeli — .NET Backend Engineer.",
+    "Building robust, scalable systems with clean architecture and quiet confidence. Portfolio of Purna Lungeli — Full Stack Backend Engineer.",
   keywords: [
     "Purna Lungeli",
     ".NET",
     "Backend Engineer",
+    "Full Stack Developer",
     "C#",
     "Portfolio",
+    "Flutter Developer",
+    "Enterprise Software Developer",
     "Software Engineer",
   ],
   authors: [{ name: "Purna Lungeli" }],
   openGraph: {
-    title: "Purna Lungeli | .NET Backend Engineer",
+    title: "Purna Lungeli | Full Stack Backend Engineer",
     description:
       "Building robust, scalable systems with clean architecture and quiet confidence.",
-    url: "https://purnalungeli.com",
+    url: "https://purnalungeli.info.np",
     siteName: "Purna Lungeli",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Purna Lungeli | .NET Backend Engineer",
+    title: "Purna Lungeli | Full Stack Engineer",
     description:
       "Building robust, scalable systems with clean architecture and quiet confidence.",
   },

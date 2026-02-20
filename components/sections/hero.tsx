@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import {
-  motion,
+  m,
   useScroll,
   useTransform,
   useMotionValue,
@@ -63,21 +63,21 @@ export function Hero() {
       <div className="hero-glow-secondary" />
 
       {/* Grid layout */}
-      <motion.div
+      <m.div
         className="w-full px-gutter grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center pt-24 lg:pt-0"
         style={{ y: heroY, opacity: heroOpacity }}
       >
         {/* Left — Text Content */}
         <div className="order-2 lg:order-1 z-10">
           {/* Subtitle */}
-          <motion.p
+          <m.p
             className="font-mono text-[clamp(11px,1.2vw,14px)] uppercase tracking-[0.2em] text-accent mb-6"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             {PERSONAL.title}
-          </motion.p>
+          </m.p>
 
           {/* Name — character reveal */}
           <AnimatedText
@@ -89,18 +89,18 @@ export function Hero() {
           />
 
           {/* Tagline */}
-          <motion.p
-            className="text-[clamp(16px,1.6vw,21px)] text-text-secondary font-light leading-relaxed max-w-[540px] mb-12"
+          <m.p
+            className="text-[clamp(16px,1.6vw,21px)] text-text-secondary font-light leading-relaxed max-w-135 mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             {PERSONAL.tagline}
-          </motion.p>
+          </m.p>
 
           {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-wrap gap-4"
+          <m.div
+            className="flex flex-wrap gap-4 items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
@@ -121,15 +121,15 @@ export function Hero() {
             >
               Download CV
             </MagneticButton>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Right — Portrait */}
-        <motion.div
+        <m.div
           className="order-1 lg:order-2 flex justify-center lg:justify-end z-10"
           style={{ y: portraitY }}
         >
-          <motion.div
+          <m.div
             ref={portraitRef}
             className="portrait-container glitch-wrapper relative"
             style={{
@@ -147,7 +147,7 @@ export function Hero() {
             }}
           >
             {/* Portrait image */}
-            <div className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] lg:w-[380px] lg:h-[460px] rounded-2xl overflow-hidden">
+            <div className="relative w-70 h-85 sm:w-[320px] sm:h-100 lg:w-95 lg:h-115 rounded-2xl overflow-hidden">
               <Image
                 src="/images/portrait-sketch.svg"
                 alt="Purna Lungeli — Sketched Portrait"
@@ -158,7 +158,7 @@ export function Hero() {
               />
 
               {/* Duotone overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-bg-primary/30 mix-blend-color pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-br from-accent/10 via-transparent to-bg-primary/30 mix-blend-color pointer-events-none" />
 
               {/* Scanline effect */}
               <div
@@ -195,12 +195,12 @@ export function Hero() {
             {/* Decorative corner accents */}
             <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-accent/30 rounded-tl-lg" />
             <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-accent/30 rounded-br-lg" />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <m.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -209,13 +209,13 @@ export function Hero() {
         <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-text-muted">
           Scroll
         </span>
-        <motion.div
-          className="w-[1px] h-8 bg-gradient-to-b from-accent/50 to-transparent"
+        <m.div
+          className="w-px h-8 bg-linear-to-b from-accent/50 to-transparent"
           animate={{ scaleY: [0, 1, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           style={{ transformOrigin: "top" }}
         />
-      </motion.div>
+      </m.div>
     </section>
   );
 }

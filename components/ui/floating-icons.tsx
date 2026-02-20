@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /* Each floating icon has: label, position, animation delay/duration, size */
 const FLOATING_ITEMS = [
@@ -39,7 +39,7 @@ export function FloatingIcons() {
       aria-hidden="true"
     >
       {FLOATING_ITEMS.map((item, i) => (
-        <motion.div
+        <m.div
           key={i}
           className="absolute"
           style={{
@@ -78,14 +78,14 @@ export function FloatingIcons() {
               {item.label}
             </span>
           </div>
-        </motion.div>
+        </m.div>
       ))}
 
       {/* Additional floating geometric shapes */}
       {[...Array(6)].map((_, i) => (
-        <motion.div
+        <m.div
           key={`shape-${i}`}
-          className="absolute rounded-full border border-accent/[0.04]"
+          className="absolute rounded-full border border-accent/4"
           style={{
             width: 60 + i * 20,
             height: 60 + i * 20,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "framer-motion";
 
 export function CustomCursor() {
   const [visible, setVisible] = useState(false);
@@ -83,8 +83,8 @@ export function CustomCursor() {
   return (
     <>
       {/* Main cursor dot */}
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[10000] rounded-full bg-white cursor-dot hidden md:block"
+      <m.div
+        className="fixed top-0 left-0 pointer-events-none z-10000 rounded-full bg-white cursor-dot hidden md:block"
         style={{
           x,
           y,
@@ -104,8 +104,8 @@ export function CustomCursor() {
       />
 
       {/* Outer ring */}
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full border border-white/20 hidden md:block"
+      <m.div
+        className="fixed top-0 left-0 pointer-events-none z-9999 rounded-full border border-white/20 hidden md:block"
         style={{
           x: outerX,
           y: outerY,

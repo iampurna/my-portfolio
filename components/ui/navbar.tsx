@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS } from "@/lib/data";
 
 export function Navbar() {
@@ -44,8 +44,8 @@ export function Navbar() {
 
   return (
     <>
-      <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 px-gutter h-[72px] flex items-center justify-between transition-all duration-500"
+      <m.nav
+        className="fixed top-0 left-0 right-0 z-50 px-gutter h-18 flex items-center justify-between transition-all duration-500"
         style={{
           background: scrolled ? "rgba(10,10,15,0.85)" : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
@@ -58,14 +58,14 @@ export function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Logo */}
-        <motion.button
+        <m.button
           onClick={() => scrollTo("hero")}
           className="font-display text-[22px] font-bold text-accent tracking-tight"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           PL.
-        </motion.button>
+        </m.button>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -86,25 +86,25 @@ export function Navbar() {
 
         {/* Hamburger */}
         <button
-          className="md:hidden flex flex-col gap-[5px] p-2 z-[60]"
+          className="md:hidden flex flex-col gap-1.25 p-2 z-60"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
-          <motion.span
-            className="w-6 h-[2px] bg-text-primary rounded-full block"
+          <m.span
+            className="w-6 h-0.5 bg-text-primary rounded-full block"
             animate={{
               rotate: menuOpen ? 45 : 0,
               y: menuOpen ? 7 : 0,
             }}
             transition={{ duration: 0.3 }}
           />
-          <motion.span
-            className="w-6 h-[2px] bg-text-primary rounded-full block"
+          <m.span
+            className="w-6 h-0.5 bg-text-primary rounded-full block"
             animate={{ opacity: menuOpen ? 0 : 1, scaleX: menuOpen ? 0 : 1 }}
             transition={{ duration: 0.2 }}
           />
-          <motion.span
-            className="w-6 h-[2px] bg-text-primary rounded-full block"
+          <m.span
+            className="w-6 h-0.5 bg-text-primary rounded-full block"
             animate={{
               rotate: menuOpen ? -45 : 0,
               y: menuOpen ? -7 : 0,
@@ -112,20 +112,20 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
           />
         </button>
-      </motion.nav>
+      </m.nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            className="fixed inset-0 z-[55] bg-bg-primary/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
+          <m.div
+            className="fixed inset-0 z-55 bg-bg-primary/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10"
             initial={{ opacity: 0, clipPath: "circle(0% at 95% 5%)" }}
             animate={{ opacity: 1, clipPath: "circle(150% at 95% 5%)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 95% 5%)" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             {NAV_ITEMS.map((item, i) => (
-              <motion.button
+              <m.button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
                 className="font-display text-3xl text-text-primary tracking-wide"
@@ -135,9 +135,9 @@ export function Navbar() {
                 whileHover={{ x: 10, color: "#d4af37" }}
               >
                 {item.label}
-              </motion.button>
+              </m.button>
             ))}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

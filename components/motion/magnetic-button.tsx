@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "framer-motion";
 
 interface MagneticButtonProps {
   children: React.ReactNode;
@@ -53,10 +53,10 @@ export function MagneticButton({
     setHovered(false);
   };
 
-  const Tag = as === "a" ? motion.a : motion.button;
+  const Tag = as === "a" ? m.a : m.button;
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
@@ -74,6 +74,6 @@ export function MagneticButton({
       >
         {children}
       </Tag>
-    </motion.div>
+    </m.div>
   );
 }

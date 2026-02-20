@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { m, Variants } from "framer-motion";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -27,7 +27,7 @@ export function ScrollReveal({
   };
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{
         opacity: 0,
@@ -46,7 +46,7 @@ export function ScrollReveal({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -84,7 +84,7 @@ export function StaggerContainer({
   delay?: number;
 }) {
   return (
-    <motion.div
+    <m.div
       className={className}
       variants={staggerContainer}
       custom={delay}
@@ -93,7 +93,7 @@ export function StaggerContainer({
       viewport={{ once: true, amount: 0.15 }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -105,8 +105,8 @@ export function StaggerItem({
   className?: string;
 }) {
   return (
-    <motion.div className={className} variants={staggerItem}>
+    <m.div className={className} variants={staggerItem}>
       {children}
-    </motion.div>
+    </m.div>
   );
 }

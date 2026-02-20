@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PROJECTS } from "@/lib/data";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import {
@@ -35,7 +35,7 @@ function ProjectCard({
   };
 
   return (
-    <motion.div
+    <m.div
       ref={cardRef}
       className="project-card relative group rounded-2xl border border-border-subtle bg-bg-card p-[clamp(24px,3vw,36px)] flex flex-col gap-5 cursor-default"
       onMouseMove={handleMouseMove}
@@ -58,7 +58,7 @@ function ProjectCard({
     >
       {/* Color accent line */}
       <div
-        className="absolute top-0 left-8 right-8 h-[2px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        className="absolute top-0 left-8 right-8 h-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background: `linear-gradient(90deg, transparent, ${project.color}, transparent)`,
         }}
@@ -143,7 +143,7 @@ function ProjectCard({
       </div>
 
       {/* Hover glow effect */}
-      <motion.div
+      <m.div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         animate={{
           boxShadow: hovering
@@ -152,7 +152,7 @@ function ProjectCard({
         }}
         transition={{ duration: 0.4 }}
       />
-    </motion.div>
+    </m.div>
   );
 }
 

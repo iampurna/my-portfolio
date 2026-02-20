@@ -1,6 +1,5 @@
 "use client";
-
-import { motion, Variants } from "framer-motion";
+import { m, Variants } from "framer-motion";
 
 interface AnimatedTextProps {
   text: string;
@@ -62,7 +61,7 @@ export function AnimatedText({
   as = "h1",
   splitBy = "char",
 }: AnimatedTextProps) {
-  const Tag = motion[as];
+  const Tag = m[as];
   const units = splitBy === "char" ? text.split("") : text.split(" ");
   const variants = splitBy === "char" ? charVariants : wordVariants;
 
@@ -85,7 +84,7 @@ export function AnimatedText({
         }}
       >
         {units.map((unit, i) => (
-          <motion.span
+          <m.span
             key={i}
             variants={variants}
             style={{
@@ -96,7 +95,7 @@ export function AnimatedText({
             {unit === " " || (splitBy === "word" && i < units.length - 1)
               ? unit + "\u00A0"
               : unit}
-          </motion.span>
+          </m.span>
         ))}
       </Tag>
     </>
@@ -114,7 +113,7 @@ export function RevealText({
   delay?: number;
 }) {
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -126,6 +125,6 @@ export function RevealText({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

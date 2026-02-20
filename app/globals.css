@@ -1,5 +1,65 @@
 @import "tailwindcss";
 
+/* ─── THEME: Colors, Fonts, Spacing, Animations ─── */
+@theme {
+  /* Colors */
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #111118;
+  --color-bg-card: rgba(255, 255, 255, 0.03);
+
+  --color-text-primary: #f5f2ed;
+  --color-text-secondary: rgba(232, 228, 222, 0.6);
+  --color-text-muted: rgba(232, 228, 222, 0.35);
+
+  --color-accent: #d4af37;
+  --color-accent-dim: rgba(212, 175, 55, 0.15);
+  --color-accent-glow: rgba(212, 175, 55, 0.06);
+
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(212, 175, 55, 0.25);
+
+  /* Fonts */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Spacing */
+  --spacing-section: clamp(100px, 12vw, 160px);
+  --spacing-gutter: clamp(24px, 8vw, 160px);
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-float-slower: float 10s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-grain: grain 0.5s steps(1) infinite;
+}
+
+/* ─── KEYFRAMES ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%      { transform: translateY(-12px) rotate(2deg); }
+  66%      { transform: translateY(8px) rotate(-1deg); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%      { transform: translate(-5%, -10%); }
+  20%      { transform: translate(-15%, 5%); }
+  30%      { transform: translate(7%, -25%); }
+  40%      { transform: translate(-5%, 25%); }
+  50%      { transform: translate(-15%, 10%); }
+  60%      { transform: translate(15%, 0%); }
+  70%      { transform: translate(0%, 15%); }
+  80%      { transform: translate(3%, 35%); }
+  90%      { transform: translate(-10%, 10%); }
+}
 
 /* ─── ROOT & RESET ─── */
 :root {
@@ -135,57 +195,21 @@ body {
 }
 
 @keyframes glitch-1 {
-  0% {
-    clip-path: inset(40% 0 61% 0);
-    transform: translate(-4px, 2px);
-  }
-  20% {
-    clip-path: inset(92% 0 1% 0);
-    transform: translate(3px, 0px);
-  }
-  40% {
-    clip-path: inset(43% 0 1% 0);
-    transform: translate(4px, -1px);
-  }
-  60% {
-    clip-path: inset(25% 0 58% 0);
-    transform: translate(-3px, 2px);
-  }
-  80% {
-    clip-path: inset(54% 0 7% 0);
-    transform: translate(5px, -3px);
-  }
-  100% {
-    clip-path: inset(58% 0 43% 0);
-    transform: translate(-2px, 1px);
-  }
+  0%   { clip-path: inset(40% 0 61% 0); transform: translate(-4px, 2px); }
+  20%  { clip-path: inset(92% 0 1% 0);  transform: translate(3px, 0px); }
+  40%  { clip-path: inset(43% 0 1% 0);  transform: translate(4px, -1px); }
+  60%  { clip-path: inset(25% 0 58% 0); transform: translate(-3px, 2px); }
+  80%  { clip-path: inset(54% 0 7% 0);  transform: translate(5px, -3px); }
+  100% { clip-path: inset(58% 0 43% 0); transform: translate(-2px, 1px); }
 }
 
 @keyframes glitch-2 {
-  0% {
-    clip-path: inset(65% 0 13% 0);
-    transform: translate(4px, -2px);
-  }
-  20% {
-    clip-path: inset(79% 0 14% 0);
-    transform: translate(-4px, 2px);
-  }
-  40% {
-    clip-path: inset(12% 0 55% 0);
-    transform: translate(2px, 4px);
-  }
-  60% {
-    clip-path: inset(38% 0 26% 0);
-    transform: translate(5px, -1px);
-  }
-  80% {
-    clip-path: inset(93% 0 2% 0);
-    transform: translate(-3px, 0px);
-  }
-  100% {
-    clip-path: inset(10% 0 60% 0);
-    transform: translate(3px, 3px);
-  }
+  0%   { clip-path: inset(65% 0 13% 0); transform: translate(4px, -2px); }
+  20%  { clip-path: inset(79% 0 14% 0); transform: translate(-4px, 2px); }
+  40%  { clip-path: inset(12% 0 55% 0); transform: translate(2px, 4px); }
+  60%  { clip-path: inset(38% 0 26% 0); transform: translate(5px, -1px); }
+  80%  { clip-path: inset(93% 0 2% 0);  transform: translate(-3px, 0px); }
+  100% { clip-path: inset(10% 0 60% 0); transform: translate(3px, 3px); }
 }
 
 /* ─── FLOATING TECH ICONS ─── */
@@ -253,7 +277,7 @@ body {
   }
 }
 
-/* ─── SMOOTH SCROLL OVERRIDES ─── */
+/* ─── SMOOTH SCROLL (LENIS) ─── */
 html.lenis,
 html.lenis body {
   height: auto;

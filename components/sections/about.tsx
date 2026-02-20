@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PERSONAL, TECH_STACK } from "@/lib/data";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import {
@@ -51,8 +51,8 @@ export function About() {
         <StaggerContainer className="flex flex-wrap gap-3" delay={0.3}>
           {TECH_STACK.map((tech) => (
             <StaggerItem key={tech}>
-              <motion.span
-                className="inline-block px-4 py-2 text-[13px] font-mono tracking-wide rounded-full border border-accent/15 text-accent/70 bg-accent/[0.03] cursor-default"
+              <m.span
+                className="inline-block px-4 py-2 text-[13px] font-mono tracking-wide rounded-full border border-accent/15 text-accent/70 bg-accent/3 cursor-default"
                 whileHover={{
                   borderColor: "rgba(212,175,55,0.4)",
                   color: "rgba(212,175,55,1)",
@@ -63,7 +63,7 @@ export function About() {
                 transition={{ duration: 0.25 }}
               >
                 {tech}
-              </motion.span>
+              </m.span>
             </StaggerItem>
           ))}
         </StaggerContainer>

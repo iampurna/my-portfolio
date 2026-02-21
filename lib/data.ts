@@ -13,7 +13,7 @@ export const PERSONAL = {
   email: "linkwithpurna@gmail.com",
   github: "https://github.com/iampurna",
   linkedin: "https://www.linkedin.com/in/iampurna/",
-  cvUrl: "/Users/purnalungeli/Downloads/Og. of Resume - Purna Lungeli.pdf",
+  cvUrl: "/resume.pdf",
 };
 
 export const PROJECTS = [
